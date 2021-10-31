@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends,status,Response,HTTPException
-from ..database import get_db
+from server.database import get_db
 from typing import List
-from .. import schemas,models
+from server import schemas,models
 from sqlalchemy.orm import Session
 from uuid import uuid4
 from datetime import datetime

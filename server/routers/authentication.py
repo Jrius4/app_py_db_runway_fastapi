@@ -1,11 +1,11 @@
 from fastapi import APIRouter
-from .. import schemas,models
-from fastapi import APIRouter, Depends,status,Response,HTTPException
-from ..database import get_db
-from ..helpers import Hash
+from server import models
+from fastapi import APIRouter, Depends,status,HTTPException
+from server.database import get_db
+from server.helpers import Hash
 from sqlalchemy.orm import Session
 from datetime import timedelta
-from ..token import ACCESS_TOKEN_EXPIRE_MINUTES,create_access_token
+from server.token import ACCESS_TOKEN_EXPIRE_MINUTES,create_access_token
 from fastapi.security import OAuth2PasswordRequestForm
 
 

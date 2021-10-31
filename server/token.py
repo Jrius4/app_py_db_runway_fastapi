@@ -1,7 +1,7 @@
 from datetime import timedelta,datetime
 from typing import Optional
 from jose import JWTError,jwt
-from .schemas import TokenData
+from server.schemas import TokenData
 
 SECRET_KEY = "98d2ce9dc5e77664c60c27721aad2527961c726c563742f24b4a70780cf259c7"
 ALGORITHM = "HS256"
