@@ -1,5 +1,7 @@
 from typing import Optional
 from fastapi import FastAPI
+from pydantic import BaseModel
+import uvicorn
 
 app = FastAPI()
 
@@ -27,8 +29,16 @@ def get_users_admins():
 def get_user(id:int):
     return {"data":id} 
 
+
+class User(BaseModel):
+    name:str
+    title:str
+    admin:Optional[bool]
+
 @app.post("/users")
-def create_user():
-    return {
-        "data":"User is created"
-    }
+def create_user(request:User):
+    return {"data":f"{request.name} is created"}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app,host="127.0.0.1",port=9000)
